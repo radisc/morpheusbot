@@ -1,0 +1,14 @@
+digraph G {
+node [shape=box];
+"chassis" [label="chassis"];
+"axis" [label="axis"];
+"arm" [label="arm"];
+"forearm" [label="forearm"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"chassis" -> "joint1" [label="xyz: 0.3 0 0.1 \nrpy: 0 -0 0"]
+"joint1" -> "axis"
+"axis" -> "joint2" [label="xyz: 0 0 0.2 \nrpy: 0 -0 0"]
+"joint2" -> "arm"
+"arm" -> "joint3" [label="xyz: 0.2 0 0.2 \nrpy: 0 -0 0.78"]
+"joint3" -> "forearm"
+}

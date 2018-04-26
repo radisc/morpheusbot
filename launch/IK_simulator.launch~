@@ -1,0 +1,23 @@
+<launch>
+
+  <!-- Launch rViz-->
+  <node pkg="rviz" type="rviz" name="visualizer" args="-d $(find morpheusbot)/conf/simulator.rviz"></node>
+
+  <!-- Launch the Software in the Loop -->
+  <node pkg="morpheusbot" type="start" name="robot" output="screen"></node>
+
+  <!-- Launch the control window -->
+  <node pkg="morpheusbot" type="controller.py" name="controller" output="screen"></node>
+
+  <!-- Launch the joystick driver -->
+  <include file="$(find ps3joy)/launch/ps3.launch">
+
+
+  <!-- Arm -->
+  <param name="robot_description" textfile="$(find morpheusbot)/urdf/robot.urdf" />
+  <param name="use_gui" value="True"/>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+
+</launch>

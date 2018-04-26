@@ -1,0 +1,5 @@
+---
+int32 longitude
+string positionLongitude
+int32 latitude
+string positionLatitude

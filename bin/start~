@@ -1,0 +1,25 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-##
+
+##
+# Name: start
+# Package: morpheusbot
+# Author: Matteo Lisotto
+# Date: 2015-03-27
+#
+# History:
+# Version      Programmer       Date          Changes
+# 0.0.1        Matteo Lisotto   2015-03-27    Script created
+#
+#
+
+#CONSTANTS
+SEMIAXIS = 1
+
+import morpheusbot.MorpheusBot
+
+if __name__ == '__main__':
+    morpheus = morpheusbot.MorpheusBot.MorpheusBot(SEMIAXIS)
+    exit = False
+    while exit == False:
+        exit = raw_input('False per uscire: ')

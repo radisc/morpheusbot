@@ -1,0 +1,60 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-##
+
+##
+# Name: start
+# Package: morpheusbot
+# Author: Matteo Lisotto
+# Date: 2015-03-27
+#
+# History:
+# Version      Programmer       Date          Changes
+# 0.0.1        Matteo Lisotto   2015-03-27    Script created
+# 0.0.2        Nicola Riste'    2015-11-22    Ros enabled
+#
+#CONSTANTS
+
+import cv2 as cv
+import rospy
+from os import environ
+import curses
+from morpheusbot.srv import *
+import morpheusbot.MorpheusBot
+from __builtin__ import raw_input
+import sys,tty,termios
+
+SEMIAXIS = 0.3
+
+# def setVel(Vs, Vd):
+#     rospy.wait_for_service('setVelocity')
+#     try:
+#         set_velocity = rospy.ServiceProxy('setVelocity', SetVelocity)
+#         set_velocity(Vs, Vd)
+#         print 'velocity set to ', Vs, Vd 
+#     except rospy.ServiceException, e:
+#         print "Service call failed: %s"%e
+
+
+if __name__ == '__main__':
+    
+    rospy.init_node('MorpheusBot')
+
+    
+    morpheus = morpheusbot.MorpheusBot.MorpheusBot(0.3)
+    exit = False
+    
+    #setVel(4, 2)
+    
+    rospy.Rate(2)
+    
+    while not rospy.is_shutdown():
+#        k = cv.waitKey(0) & 0xFF
+#         print chr(k)
+#         if ord('w') == k:  
+#             print ord('w')
+        #print k
+        #if k == 'w':
+            #print "up"
+        rospy.spin()
+       
+       
